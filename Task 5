@@ -1,0 +1,29 @@
+marks = int(input("Enter your marks: "))
+
+if marks >= 90:
+    print("Grade: A+")
+    print("GPA: 4.00")
+elif marks >= 85:
+    print("Grade: A")
+    print("GPA: 3.75")
+elif marks >= 80:
+    print("Grade: B+")
+    print("GPA: 3.50")
+elif marks >= 75:
+    print("Grade: B")
+    print("GPA: 3.25")
+elif marks >= 70:
+    print("Grade: C+")
+    print("GPA: 3.00")
+elif marks >= 65:
+    print("Grade: C")
+    print("GPA: 2.75")
+elif marks >= 60:
+    print("Grade: D+")
+    print("GPA: 2.50")
+elif marks >= 50:
+    print("Grade: D")
+    print("GPA: 2.00")
+else:
+    print("Grade: F")
+    print("GPA: 0.00")
