@@ -1,0 +1,61 @@
+def calculate_average(marks):
+    if len(marks) == 0:
+        return None
+
+    total = 0
+
+    for mark in marks:
+        if mark < 0 or mark > 100:
+            return None
+        total = total + mark
+
+    return total / len(marks)
+
+
+def classify_performance(average):
+    if average >= 80:
+        return "Excellent"
+    elif average >= 70:
+        return "Good"
+    elif average >= 60:
+        return "Satisfactory"
+    else:
+        return "Needs Improvement"
+
+
+def display_report(students):
+    for student in students:
+        average = calculate_average(student["marks"])
+
+        print("\nID:", student["id"])
+        print("Name:", student["name"])
+
+        if average is None:
+            print("Average: Invalid or missing marks")
+            print("Performance: Not available")
+        else:
+            print("Average:", average)
+            print("Performance:", classify_performance(average))
+
+
+students = []
+
+n = int(input("Enter number of students: "))
+
+for i in range(n):
+    print("\nEnter student", i + 1)
+
+    sid = input("Enter ID: ")
+    name = input("Enter name: ")
+
+    count = int(input("Enter number of assessments: "))
+    marks = []
+
+    for j in range(count):
+        mark = float(input("Enter mark: "))
+        marks.append(mark)
+
+    student = {"id": sid, "name": name, "marks": marks}
+    students.append(student)
+
+display_report(students)
